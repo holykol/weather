@@ -13,7 +13,7 @@ RUN sudo touch src/main.rs
 RUN cargo build --release
 
 FROM alpine:3.12
-RUN apk --no-cache add ca-certificates
+RUN apk --no-cache add ca-certificates curl
 
 USER 1000
 COPY --from=builder --chown=1000:1000 \
